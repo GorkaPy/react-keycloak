@@ -49,7 +49,7 @@
     "prepublishOnly": "npm run build && cp ../../LICENSE.md ."
   },
   "peerDependencies": {
-    "keycloak-js": ">=9.0.2",
+    "keycloak-js": ">=17.0.1",
     "react": ">=16.8",
     "typescript": ">=3.8"
   },
@@ -63,8 +63,8 @@
     "@react-keycloak/core": "file:../core",
     "detect-node": "^2.0.4",
     "hoist-non-react-statics": "^3.3.2",
-    "js-base64": "^3.4.5",
-    "js-cookie": "^2.2.1"
+    "js-base64": "^3.7.5",
+    "js-cookie": "^3.0.5"
   },
   "jest": {
     "preset": "ts-jest",
