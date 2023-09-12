@@ -17,7 +17,7 @@ export type AuthProviderProps<T extends AuthClient> = {
   /**
    * The single AuthClient instance to be used by your application.
    */
-  authClient: T
+  authClient: T,
 
   /**
    * A flag to enable automatic token refresh. Defaults to true.
@@ -25,12 +25,12 @@ export type AuthProviderProps<T extends AuthClient> = {
    *
    * @default true
    */
-  autoRefreshToken?: boolean
+  autoRefreshToken?: boolean,
 
   /**
    * The config to be used when initializing AuthClient instance.
    */
-  initOptions?: AuthClientInitOptions
+  initOptions?: AuthClientInitOptions,
 
   /**
    * An optional loading check function to customize LoadingComponent display condition.
@@ -40,32 +40,32 @@ export type AuthProviderProps<T extends AuthClient> = {
    *
    * @returns {boolean} Set to true to display LoadingComponent, false to hide it.
    */
-  isLoadingCheck?: (authClient: T) => boolean
+  isLoadingCheck?: (authClient: T) => boolean,
 
   /**
    * An optional component to display while AuthClient instance is being initialized.
    */
-  LoadingComponent?: JSX.Element
+  LoadingComponent?: JSX.Element,
 
   /**
    * An optional function to receive AuthClient events as they happen.
    */
-  onEvent?: (eventType: AuthClientEvent, error?: AuthClientError) => void
+  onEvent?: (eventType: AuthClientEvent, error?: AuthClientError) => void,
 
   /**
    * An optional function to receive AuthClient tokens when changed.
    *
    * @param {AuthClientTokens} tokens The current AuthClient tokens set.
    */
-  onTokens?: (tokens: AuthClientTokens) => void
+  onTokens?: (tokens: AuthClientTokens) => void,
 }
 
 type AuthProviderState = {
-  initialized: boolean
+  initialized: boolean,
 
-  isAuthenticated: boolean
+  isAuthenticated: boolean,
 
-  isLoading: boolean
+  isLoading: boolean,
 }
 
 /**

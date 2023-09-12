@@ -1,13 +1,12 @@
-import type { KeycloakInstance } from 'keycloak-js'
-import * as React from 'react'
+import type {KeycloakInstance} from 'keycloak-js';
+import * as React from 'react';
 
-import { useKeycloak } from './useKeycloak'
+import {useKeycloak} from './useKeycloak';
 
 type InjectedProps = {
-  keycloakInitialized: boolean
-
-  keycloak: KeycloakInstance
-}
+  keycloakInitialized: boolean;
+  keycloak: KeycloakInstance;
+};
 
 /**
  * An HOC which injects the `keycloak` instance and the `keycloakInitialized` flag as props.
@@ -18,16 +17,16 @@ export function withKeycloak<P extends InjectedProps>(
   Component: React.ComponentType<P>
 ): React.FC<Subtract<P, InjectedProps>> {
   return function WrappedComponent(props: P) {
-    const { keycloak, initialized } = useKeycloak()
+    const { keycloak, initialized } = useKeycloak();
 
     return (
-      <Component
-        {...(props as P)}
-        keycloakInitialized={initialized}
-        keycloak={keycloak}
-      />
-    )
-  }
+        <Component
+          {...(props as P)}
+          keycloakInitialized={initialized}
+          keycloak={keycloak}
+        />
+    );
+  };
 }
 
 /*
@@ -44,7 +43,7 @@ export function withKeycloak<P extends InjectedProps>(
  *   // Expect: string | number
  *   SetDifference<string | number | (() => void), Function>;
  */
-type SetDifference<A, B> = A extends B ? never : A
+type SetDifference<A, B> = A extends B ? never : A;
 
 /**
  * SetComplement
@@ -53,7 +52,7 @@ type SetDifference<A, B> = A extends B ? never : A
  *   // Expect: "1"
  *   SetComplement<'1' | '2' | '3', '2' | '3'>;
  */
-type SetComplement<A, A1 extends A> = SetDifference<A, A1>
+type SetComplement<A, A1 extends A> = SetDifference<A, A1>;
 
 /**
  * Subtract
@@ -68,4 +67,4 @@ type SetComplement<A, A1 extends A> = SetDifference<A, A1>
 type Subtract<T extends T1, T1 extends object> = Pick<
   T,
   SetComplement<keyof T, keyof T1>
->
+>;

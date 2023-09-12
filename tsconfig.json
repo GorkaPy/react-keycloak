@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "target": "es5",
+    "sourceMap": true,
+    "jsx": "react"
+  },
+  "types": [
+    "node", "jest", "@testing-library/jest-dom"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

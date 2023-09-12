@@ -9,7 +9,7 @@ export type IAuthContextProps<T extends AuthClient> = {
   /**
    * The single AuthClient of your application.
    */
-  authClient?: T
+  authClient?: T,
 
   /**
    * Boolean indicating whenever the AuthClient has been initialized by AuthProvider

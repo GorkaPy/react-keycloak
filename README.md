@@ -3,10 +3,12 @@
 This library is deprecated and will no longer be maintained or updated.
 
 Instead, it is recommended to use:
+
 - [`react-oidc-context`](https://github.com/authts/react-oidc-context) for React SPA projects instead of `@react-keycloak/web`
 - [`NextAuth.js`](https://github.com/nextauthjs/next-auth) for Next.js projects instead of `@react-keycloak/ssr`
 
 ---
+
 \
 ![React Keycloak](/art/react-keycloak-logo.png?raw=true 'React Keycloak Logo')
 
